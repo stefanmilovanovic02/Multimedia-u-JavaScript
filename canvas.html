@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas u JavaScript</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/lekcije.css">
+    <link href="https://fonts.googleapis.com/css2?family=Righteous&family=Roboto:wght@400;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <a class="navbar-brand" href="index.html">
+            <img src="assets/img/transparent logo.png" alt="Logo" class="logo">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="audio.html">Audio</a></li>
+                <li class="nav-item"><a class="nav-link" href="video.html">Video</a></li>
+                <li class="nav-item"><a class="nav-link" href="canvas.html">Canvas API</a></li>
+                <li class="nav-item"><a class="nav-link" href="animacija.html">Animacija</a></li>
+                <li class="nav-item"><a class="nav-link" href="youtube.html">YouTube Video</a></li>
+                <li class="nav-item"><a class="nav-link" href="3d.html">3D Grafika</a></li>
+                <li class="nav-item"><a class="nav-link" href="igrica.html">Igrica</a></li>
+                <li class="nav-item"><a class="nav-link" href="test.html">Test</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero/Naslov -->
+    <header class="header-section">
+        <canvas id="myCanvas"></canvas>
+        <div class="wave-shape"></div>
+        <div class="container">
+            <h1>Canvas API in JavaScript</h1>
+            <p>Otkrij kako JavaScript omogućava moćne grafičke prikaze koristeći Canvas API u veb aplikacijama.
+            </p>
+            <button class="animated-button" onclick="scrollToSection()">Započni</button>
+        </div>
+    </header>
+
+
+    <!-- Content Section -->
+    <section class="content-section" id="audio-usage">
+        <div class="container">
+            <h2>Zašto Koristiti Canvas API u JavaScript-u?</h2>
+            <div class="content-box">
+                <h4>Prednosti i Upotreba Canvas API u JavaScript-u</h3>
+                    <br>
+                    <p>JavaScript omogućava moćno korišćenje grafike i animacija putem Canvas API-a, što pruža dinamičke
+                        i interaktivne vizuelne prikaze. Evo nekoliko glavnih razloga zašto se koristi:</p>
+                    <p>Crtanje i animacije: Canvas API ti omogućava da crtaš grafiku, oblike i slike direktno na veb
+                        stranici. Možeš kreirati animacije, menjati boje, oblike i efekte u realnom vremenu.</p>
+                    <p>Interaktivnost: Možeš dodavati interaktivne elemente, kao što su dugmad, igre ili vizualizacije
+                        podataka, koje reaguju na korisničke akcije (klikove, pokrete miša, dodire), što povećava
+                        angažovanost korisnika.</p>
+                    <p>Manipulacija slikama: Canvas API omogućava uređivanje i obradu slika, uključujući filtriranje,
+                        transformacije i animacije, što je idealno za aplikacije koje se bave grafikom.</p>
+                    <p>Podrška za 2D grafiku: Canvas API se najčešće koristi za 2D grafiku, pružajući korisnicima
+                        mogućnost da kreiraju složene vizualizacije i dinamičke animacije.</p>
+                    <p>Prednosti:</p>
+                    <p>Velika fleksibilnost: Canvas API pruža potpunu kontrolu nad crtanjem, što omogućava
+                        implementaciju raznih grafičkih rešenja, od jednostavnih oblika do složenih vizualizacija</p>
+                    <p>Visoka performansa: Grafika se renderuje direktno u pretraživaču, što omogućava brze i fluidne
+                        animacije i interakcije bez potrebe za dodatnim pluginovima.</p>
+                    <p>Multiplatformska podrška: Canvas API radi u svim modernim pretraživačima, što ga čini dostupnim
+                        na različitim uređajima, uključujući mobilne telefone i tablete.</p>
+                    <p>Mane:</p>
+                    <p>Kompleksnost: Rad sa Canvas API-em može biti složeniji od korišćenja drugih grafičkih rešenja,
+                        posebno za složene animacije i efekte.</p>
+                    <p>Ograničena podrška za vektorsku grafiku: Iako Canvas može prikazivati vektorsku grafiku, nije
+                        optimizovan za rad s njom kao što je to slučaj sa SVG-om.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Examples Section -->
+    <section class="interactive-examples">
+        <div class="container">
+            <h2>Interaktivni Primeri</h2>
+            <p>See JavaScript in action with Canvas API control.</p>
+
+            <div class="row">
+                <div class="col-md-6 example-card">
+                    <div class="example-content">
+                        <small>primer 1</small>
+                        <h3>Crtanje kruga</h3>
+                        <p>Ovaj primer prikazuje kako možete da iscrtate krug pomoću JavaScript-a.</p>
+                        <button type="button" class="btn btn-info" data-toggle="modal"
+                            data-target="#imageModal1">Prikaži kod</button>
+                    </div>
+                </div>
+                <div class="col-md-6 example-placeholder">
+                    <div class="placeholder-contentt">
+                        <h3>Primer 1: Crtanje Kruga</h3>
+                        <canvas id="circleCanvas" width="300" height="300" style="border:1px solid #000;"></canvas>
+                        <button class="btn btn-primary" onclick="drawCircle()">Crtaj Krug</button>
+                    </div>
+                </div>
+
+                <div class="col-md-6 example-placeholder">
+                    <div class="placeholder-contentt">
+                        <h3>Primer 2: Animacija Kvadrata</h3>
+                        <canvas id="squareCanvas" width="300" height="300" style="border:1px solid #000;"></canvas>
+                        <button class="btn btn-primary" onclick="animateSquare()">Animiraj Kvadrat</button>
+                    </div>
+                </div>
+
+                <div class="col-md-6 example-card">
+                    <div class="example-content">
+                        <small>primer 2</small>
+                        <h3>Animacija Kvadrata</h3>
+                        <p>Ovaj primer prikazuje kako možete da animirate kvadrat tako da ide levo desno pomoću
+                            JavaScript-a.</p>
+                            <button type="button" class="btn btn-info" data-toggle="modal"
+                            data-target="#imageModal2">Prikaži kod</button>
+                    </div>
+                </div>
+
+                <div class="col-md-6 example-card">
+                    <div class="example-content">
+                        <small>primer 3</small>
+                        <h3>Promena Boje Kvadrata</h3>
+                        <p>Ovaj primer prikazuje kako možete da promenite boju kvadrata kada stisnete dugme promeni boju
+                            pomoću JavaScript-a.</p>
+                            <button type="button" class="btn btn-info" data-toggle="modal"
+                            data-target="#imageModal3">Prikaži kod</button>
+                    </div>
+                </div>
+                <div class="col-md-6 example-placeholder">
+                    <div class="placeholder-contentt">
+                        <h3>Primer 3: Promena Boje</h3>
+                        <canvas id="colorCanvas" width="300" height="200" style="border:1px solid #000;"></canvas>
+                        <button class="btn btn-primary" onclick="changeColor()">Promeni Boju</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modali za slike -->
+    <div class="modal fade" id="imageModal1" tabindex="-1" aria-labelledby="imageModal1Label" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content bg-dark text-light">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="imageModal1Label">Kod za Primer 1</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <img src="assets/img/CanvasPrimer1.png" alt="Kod za Primer 1" class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="imageModal2" tabindex="-1" aria-labelledby="imageModal2Label" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content bg-dark text-light">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="imageModal2Label">Kod za Primer 2</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <img src="assets/img/CanvasPrimer2.png" alt="Kod za Primer 2" class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="imageModal3" tabindex="-1" aria-labelledby="imageModal3Label" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content bg-dark text-light">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="imageModal3Label">Kod za Primer 3</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <img src="assets/img/CanvasPrimer3.png" alt="Kod za Primer 3" class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="download-section">
+                        <img src="assets/img/transparent logo.png" alt="Logo" class="logo">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <ul class="footer-links">
+                        <li>
+                            <h3>Linkovi</h3>
+                        </li>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="audio.html">Audio</a></li>
+                        <li><a href="video.html">Audio</a></li>
+                        <li><a href="canvas.html">Canvas API</a></li>
+                        <li><a href="animacija.html">Animacije</a></li>
+                        <li><a href="youtube.html">YouTube Video</a></li>
+                        <li><a href="3d.html">3D Grafika</a></li>
+                        <li><a href="test.html">Test</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <div class="footer-download-section">
+                        <a href="assets/doc/Multimedia u JavaScript.pptx" download class="btn btn-primary">
+                            <img src="assets/img/powerpoint.png" alt="PDF Icon" class="button-icon"> Preuzmi Dokument
+                        </a>
+                        <a href="assets/doc/Multimedija u Javascriptu.pdf" download class="btn btn-primary">
+                            <img src="assets/img/pdf.png" alt="PowerPoint Icon" class="button-icon"> Preuzmi Dokument
+                        </a>
+                        <a href="assets/doc/Multimedija u Javascriptu.docx" download class="btn btn-primary">
+                            <img src="assets/img/word.png" alt="Word Icon" class="button-icon"> Preuzmi Dokument
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; Copyright 2024 Design and developed by <a href="https://stefanmilovanovic.webflow.io">Stefan</a>, All Rights Reserved.</p>
+        </div>
+    </footer>
+
+
+    <!-- Bootstrap JS -->
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="js/canvas.js"></script>
+    <script src="js/dugme.js"></script>
+</body>
+
+</html>

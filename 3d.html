@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Grafika in JavaScript</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/lekcije.css">
+    <link href="https://fonts.googleapis.com/css2?family=Righteous&family=Roboto:wght@400;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <a class="navbar-brand" href="index.html">
+            <img src="assets/img/transparent logo.png" alt="Logo" class="logo">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="audio.html">Audio</a></li>
+                <li class="nav-item"><a class="nav-link" href="video.html">Video</a></li>
+                <li class="nav-item"><a class="nav-link" href="canvas.html">Canvas</a></li>
+                <li class="nav-item"><a class="nav-link" href="animacija.html">Animacija</a></li>
+                <li class="nav-item"><a class="nav-link" href="youtube.html">YouTube</a></li>
+                <li class="nav-item"><a class="nav-link" href="3d.html">3D Grafika</a></li>
+                <li class="nav-item"><a class="nav-link" href="igrica.html">Igrica</a></li>
+                <li class="nav-item"><a class="nav-link" href="test.html">Test</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero/Naslov -->
+    <header class="header-section">
+        <canvas id="myCanvas"></canvas>
+        <div class="wave-shape"></div>
+        <div class="container">
+            <h1>3D Grafika in JavaScript</h1>
+            <p>Otkrij kako JavaScript donosi impresivnu 3D grafiku u veb aplikacije uz pomoć WebGL-a.</p>
+            <button class="animated-button" onclick="scrollToSection()">Započni</button>
+        </div>
+    </header>
+
+
+    <!-- Content Section -->
+    <section class="content-section" id="audio-usage">
+        <div class="container">
+            <h2>Zašto Koristiti 3D Grafike u JavaScript-u?</h2>
+            <div class="content-box">
+                <h4>Prednosti i Upotreba 3D Grafike u JavaScript-u
+                    </h3>
+                    <br>
+                    <p>JavaScript pruža moćne alate za kreiranje 3D grafike na vebu, koristeći biblioteke kao što su
+                        Three.js i WebGL. Evo nekoliko ključnih razloga zašto se koristi:</p>
+                    <p>Impresivni vizuelni prikazi: 3D grafika omogućava kreiranje realističnih i privlačnih
+                        vizuelizacija koje mogu značajno poboljšati korisničko iskustvo.</p>
+                    <p>Interaktivnost: Možeš dodavati interaktivne elemente, kao što su animacije, korisničke kontrole i
+                        fizički efekti, čime se stvara dinamično okruženje koje reaguje na korisničke akcije.</p>
+                    <p>Primena u igrama i simulacijama: 3D grafika je ključna za razvoj igrica, edukativnih simulacija i
+                        vizualizacija podataka, omogućavajući korisnicima da dožive složene svetove i scenarije.</p>
+                    <p>Podrška za složene efekte: Korišćenjem 3D grafike, možeš implementirati razne efekte, uključujući
+                        senčenje, osvetljavanje, i teksturiranje, što dodaje dubinu i realizam tvojim projektima.</p>
+                    <p>Prednosti:</p>
+                    <p>Fleksibilnost: 3D grafika omogućava kreativno izražavanje i raznovrsne primene, od igara do
+                        arhitektonskih vizualizacija.</p>
+                    <p>Visoka performansa: Moderni pretraživači podržavaju akceleraciju grafike, što omogućava visok
+                        kvalitet renderovanja i fluidne animacije.</p>
+                    <p>Multiplatformska podrška: Kao i Canvas API, 3D grafika u JavaScript-u radi na svim savremenim
+                        pretraživačima i uređajima, čime se obezbeđuje široka dostupnost</p>
+                    <p>Mane:</p>
+                    <p>Kompleksnost: Rad sa 3D grafikom može biti izazovan i zahteva dodatno znanje o konceptima kao što
+                        su geometrija, svetlost i animacija.</p>
+                    <p>Zavisnost od performansi: 3D grafika može biti resursno zahtevna, pa je važno optimizovati
+                        sadržaj kako bi se obezbedile glatke performanse na različitim uređajima.</p>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Interactive Examples Section -->
+    <section class="interactive-examples">
+        <div class="container">
+            <h2>Interaktivni Primeri sa 3D Grafikom</h2>
+            <p>Otkrijte osnovne mogućnosti Three.js za rad sa 3D grafikama.</p>
+
+            <!-- Primer 1:  -->
+            <div class="row mb-4">
+                <div class="col-md-6 example-card">
+                    <div class="example-content">
+                        <small>Primer 1</small>
+                        <h3>Animirana Kocka</h3>
+                        <p>Rotacija kocke u realnom vremenu pomoću JavaScript animacije.</p>
+                        <button type="button" class="btn btn-info" data-toggle="modal"
+                            data-target="#imageModal1">Prikaži kod</button>
+                    </div>
+                </div>
+                <div class="col-md-6 example-placeholder">
+                    <div class="placeholder-content">
+                        <div id="animated-cube" style="width: 100%; height: 300px;"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Primer 2: Animirana kocka -->
+            <div class="row mb-4">
+                <div class="col-md-6 example-card">
+                    <div class="example-content">
+                        <small>Primer 2</small>
+                        <h3>Torus sa Pokretnim Svetlom</h3>
+                        <p>Rotirajući torus osvetljen iz različitih pravaca.</p>
+                        <button type="button" class="btn btn-info" data-toggle="modal"
+                            data-target="#imageModal2">Prikaži kod</button>
+                    </div>
+                </div>
+                <div class="col-md-6 example-placeholder">
+                    <div class="placeholder-content">
+                        <div id="animated-torus" style="width: 100%; height: 300px;"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Primer 3:  -->
+            <div class="row mb-4">
+                <div class="col-md-6 example-card">
+                    <div class="example-content">
+                        <small>Primer 3</small>
+                        <h3>Animirana Sfera</h3>
+                        <p>Sfera koja se rotira i menja boju tokom vremena.</p>
+                        <button type="button" class="btn btn-info" data-toggle="modal"
+                            data-target="#imageModal3">Prikaži kod</button>
+                    </div>
+                </div>
+                <div class="col-md-6 example-placeholder">
+                    <div class="placeholder-content">
+                        <div id="animated-sphere" style="width: 100%; height: 300px;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script>
+        // Helper funkcija za dinamičko prilagođavanje renderera i kamere
+        const createRendererAndCamera = (container) => {
+            const width = container.clientWidth;
+            const height = container.clientHeight;
+
+            const renderer = new THREE.WebGLRenderer();
+            renderer.setSize(width, height);
+
+            const camera = new THREE.PerspectiveCamera(75, width / height, 0.1, 1000);
+            return { renderer, camera };
+        };
+
+        // Primer 1: Animirana Kocka
+        const animatedCube = () => {
+            const container = document.getElementById("animated-cube");
+            const { renderer, camera } = createRendererAndCamera(container);
+            container.appendChild(renderer.domElement);
+
+            const scene = new THREE.Scene();
+            const geometry = new THREE.BoxGeometry();
+            const material = new THREE.MeshBasicMaterial({ color: 0x0000ff });
+            const cube = new THREE.Mesh(geometry, material);
+            scene.add(cube);
+
+            camera.position.z = 5;
+
+            const animate = () => {
+                requestAnimationFrame(animate);
+                cube.rotation.x += 0.01;
+                cube.rotation.y += 0.01;
+                renderer.render(scene, camera);
+            };
+            animate();
+        };
+
+
+        // Primer 2: Animiran Torus
+        const animatedTorus = () => {
+            const container = document.getElementById("animated-torus");
+            const { renderer, camera } = createRendererAndCamera(container);
+            container.appendChild(renderer.domElement);
+
+            const scene = new THREE.Scene();
+
+            // Kreiranje geometrije krofne
+            const geometry = new THREE.TorusGeometry(1, 0.4, 16, 100); // Unutrašnji prečnik, debljina, segmenti
+            const material = new THREE.MeshStandardMaterial({ color: 0xffa500, roughness: 0.5 });
+            const donut = new THREE.Mesh(geometry, material);
+            scene.add(donut);
+
+            // Dodavanje svetla
+            const light = new THREE.PointLight(0xffffff, 1);
+            light.position.set(5, 5, 5);
+            scene.add(light);
+
+            camera.position.z = 5;
+
+            // Animacija krofne
+            const animate = () => {
+                requestAnimationFrame(animate);
+                donut.rotation.x += 0.01;
+                donut.rotation.y += 0.01;
+                renderer.render(scene, camera);
+            };
+            animate();
+        };
+
+        // Primer 3: Animirana Sfera
+        const animatedSphere = () => {
+            const container = document.getElementById("animated-sphere");
+            const { renderer, camera } = createRendererAndCamera(container);
+
+            // Omogući renderovanje senki
+            renderer.shadowMap.enabled = true;
+            renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+            container.appendChild(renderer.domElement);
+
+            const scene = new THREE.Scene();
+
+            // Dodaj svetlo
+            const light = new THREE.PointLight(0xffffff, 1, 50);
+            light.position.set(5, 5, 5);
+            light.castShadow = true; // Svetlo baca senku
+            scene.add(light);
+
+            // Kreiraj podlogu za senku
+            const planeGeometry = new THREE.PlaneGeometry(10, 10);
+            const planeMaterial = new THREE.MeshStandardMaterial({ color: 0xcccccc, roughness: 1 });
+            const plane = new THREE.Mesh(planeGeometry, planeMaterial);
+            plane.rotation.x = -Math.PI / 2; // Rotiraj da bude horizontalna
+            plane.position.y = -1.5; // Spusti je ispod sfere
+            plane.receiveShadow = true; // Omogući primanje senke
+            scene.add(plane);
+
+            // Kreiraj višebojnu sferu
+            const geometry = new THREE.SphereGeometry(1, 32, 32);
+
+            // Primenjujemo shader materijal za gradijent boje
+            const material = new THREE.ShaderMaterial({
+                vertexShader: `
+        varying vec3 vPosition;
+        void main() {
+            vPosition = position; // Pozicija za bojenje
+            gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
+        }
+    `,
+                fragmentShader: `
+        varying vec3 vPosition;
+        void main() {
+            // Generisanje boja na osnovu pozicije (RGB)
+            gl_FragColor = vec4(
+                0.5 + 0.5 * sin(vPosition.x * 10.0), // Crvena varira po X osi
+                0.5 + 0.5 * cos(vPosition.y * 10.0), // Zelena varira po Y osi
+                0.5 + 0.5 * sin(vPosition.z * 10.0), // Plava varira po Z osi
+                1.0
+            );
+        }
+    `
+            });
+
+            const sphere = new THREE.Mesh(geometry, material);
+            sphere.castShadow = true; // Sfera baca senku
+            sphere.position.y = 0; // Malo podigni sferu iznad podloge
+            scene.add(sphere);
+
+            camera.position.z = 5;
+
+            // Animacija sfere
+            const animate = () => {
+                requestAnimationFrame(animate);
+                sphere.rotation.y += 0.02; // Rotacija oko Y ose
+                renderer.render(scene, camera);
+            };
+            animate();
+        };
+
+        // Inicijalizacija svih primera
+        document.addEventListener("DOMContentLoaded", () => {
+            animatedCube();
+            animatedTorus();
+            animatedSphere();
+
+        });
+    </script>
+
+    <!-- Modali za slike -->
+    <div class="modal fade" id="imageModal1" tabindex="-1" aria-labelledby="imageModal1Label" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content bg-dark text-light">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="imageModal1Label">Kod za Primer 1</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <img src="assets/img/3dPrimer1.png" alt="Kod za Primer 1" class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="imageModal2" tabindex="-1" aria-labelledby="imageModal2Label" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content bg-dark text-light">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="imageModal2Label">Kod za Primer 2</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <img src="assets/img/3dPrimer2.png" alt="Kod za Primer 2" class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="imageModal3" tabindex="-1" aria-labelledby="imageModal3Label" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content bg-dark text-light">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="imageModal3Label">Kod za Primer 3</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <img src="assets/img/3dPrimer3.png" alt="Kod za Primer 3" class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="download-section">
+                        <img src="assets/img/transparent logo.png" alt="Logo" class="logo">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <ul class="footer-links">
+                        <li>
+                            <h3>Linkovi</h3>
+                        </li>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="audio.html">Audio</a></li>
+                        <li><a href="video.html">Audio</a></li>
+                        <li><a href="canvas.html">Canvas API</a></li>
+                        <li><a href="animacija.html">Animacije</a></li>
+                        <li><a href="youtube.html">YouTube Video</a></li>
+                        <li><a href="3d.html">3D Grafika</a></li>
+                        <li><a href="test.html">Test</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <div class="footer-download-section">
+                        <a href="assets/doc/Multimedia u JavaScript.pptx" download class="btn btn-primary">
+                            <img src="assets/img/powerpoint.png" alt="PDF Icon" class="button-icon"> Preuzmi Dokument
+                        </a>
+                        <a href="assets/doc/Multimedija u Javascriptu.pdf" download class="btn btn-primary">
+                            <img src="assets/img/pdf.png" alt="PowerPoint Icon" class="button-icon"> Preuzmi Dokument
+                        </a>
+                        <a href="assets/doc/Multimedija u Javascriptu.docx" download class="btn btn-primary">
+                            <img src="assets/img/word.png" alt="Word Icon" class="button-icon"> Preuzmi Dokument
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; Copyright 2024 Design and developed by <a href="https://stefanmilovanovic.webflow.io">Stefan</a>, All Rights Reserved.</p>
+        </div>
+    </footer>
+
+
+    <!-- Bootstrap JS -->
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="js/dugme.js"></script>
+</body>
+
+</html>

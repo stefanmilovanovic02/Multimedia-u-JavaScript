@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audio u JavaScript</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/lekcije.css">
+    <link href="https://fonts.googleapis.com/css2?family=Righteous&family=Roboto:wght@400;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <a class="navbar-brand" href="index.html">
+            <img src="assets/img/transparent logo.png" alt="Logo" class="logo">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="audio.html">Audio</a></li>
+                <li class="nav-item"><a class="nav-link" href="video.html">Video</a></li>
+                <li class="nav-item"><a class="nav-link" href="canvas.html">Canvas API</a></li>
+                <li class="nav-item"><a class="nav-link" href="animacija.html">Animacije</a></li>
+                <li class="nav-item"><a class="nav-link" href="youtube.html">YouTube Video</a></li>
+                <li class="nav-item"><a class="nav-link" href="3d.html">3D Grafika</a></li>
+                <li class="nav-item"><a class="nav-link" href="igrica.html">Igrica</a></li>
+                <li class="nav-item"><a class="nav-link" href="test.html">Test</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero/Naslov -->
+    <header class="header-section">
+        <canvas id="myCanvas"></canvas>
+        <div class="wave-shape"></div>
+        <div class="container">
+            <h1>Audio in JavaScript</h1>
+            <p>Otkrij kako JavaScript omogućava neprimetnu integraciju audio sadržaja u veb aplikacijama.</p>
+            <button class="animated-button" onclick="scrollToSection()">Započni</button>
+        </div>
+    </header>
+
+
+    <!-- Content Section -->
+    <section class="content-section" id="audio-usage">
+        <div class="container">
+            <h2>Zašto Koristiti Audio u JavaScript-u?</h2>
+            <div class="content-box">
+                <h4>Prednosti i Upotreba Audija u JavaScript-u</h3>
+                    <br>
+                    <p>JavaScript nudi snažne alate za rad sa zvukom putem HTML5 audio elemenata i Web Audio API-ja. Evo
+                        nekoliko glavnih razloga zašto se koristi:</p>
+                    <p>Kontrola reprodukcije: JavaScript ti omogućava da kontrolišeš reprodukciju audio zapisa,
+                        uključujući funkcije kao što su play, pauza, zaustavljanje, promena jačine zvuka, i navigacija
+                        kroz audio fajl.</p>
+                    <p>Interaktivnost: Možeš dodavati audio efekte koji reaguju na korisničke akcije ili događaje na
+                        stranici, što povećava angažovanost korisnika.</p>
+                    <p>Integracija u igre i aplikacije: U JavaScript-u je lako dodavati zvukove u igrice ili aplikacije
+                        kako bi se poboljšalo korisničko iskustvo, npr. zvučni efekti ili muzička podloga.</p>
+                    <p>Web Audio API: Omogućava naprednu manipulaciju zvukom, uključujući stvaranje dinamičkih zvučnih
+                        efekata, filtriranje, i kontrolu višekanalnih audio signala. Takođe je moguće analizirati zvučne
+                        talase u realnom vremenu.</p>
+                    <p>Prednosti:</p>
+                    <p>Multiplatformska podrška: JavaScript radi u svim modernim pretraživačima, pa je integracija zvuka
+                        dostupna na svim uređajima.</p>
+                    <p>Laka upotreba: Rad sa audio elementima putem JavaScript-a je relativno jednostavan i ne zahteva
+                        dodatne biblioteke.</p>
+                    <p>Velika fleksibilnost: Moguće je implementirati razne funkcionalnosti, od osnovnog puštanja pesme
+                        do kompleksne audio obrade.</p>
+                    <p>Mane:</p>
+                    <p>Ograničena podrška za formate: Ne podržavaju svi pretraživači iste formate, pa je neophodno
+                        koristiti različite formate (kao što su MP3, Ogg) kako bi se osigurala kompatibilnost.</p>
+                    <p>Zavisnost od pretraživača: Performanse mogu zavisiti od pretraživača i hardvera na kojem se
+                        aplikacija izvršava.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Examples Section -->
+    <section class="interactive-examples">
+        <div class="container">
+            <!-- Prvi primer -->
+            <div class="row mb-4">
+                <!-- Prva kolona: opis primera -->
+                <div class="col-md-6 example-card">
+                    <div class="example-content">
+                        <small>Primer 1</small>
+                        <h3>Dodavanje audio fajla u HTML uz JavaScript kontrolu</h3>
+                        <p>Ovaj primer prikazuje kako možete da dodate audio fajl na vašu web stranicu i kontrolišete ga
+                            pomoću JavaScript-a. Možete da koristite Play/Pause dugmad da kontrolišete zvuk.</p>
+                        <button type="button" class="btn btn-info" data-toggle="modal"
+                            data-target="#imageModal1">Prikaži kod</button>
+                    </div>
+                </div>
+
+                <!-- Druga kolona: zadatak ili primer -->
+                <div class="col-md-6 example-placeholder">
+                    <div class="placeholder-content">
+                        <p>Dodaj audio element u HTML, poveži ga sa JavaScript funkcijama za reprodukciju i pauzu.</p>
+                        <audio id="myAudio">
+                            <source src="assets/audio/audio.mp3" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                        <br>
+                        <button onclick="playAudio()" class="btn btn-success">Play</button>
+                        <button onclick="pauseAudio()" class="btn btn-danger">Pause</button>
+                        <script>
+                            var audio = document.getElementById("myAudio");
+                            function playAudio() {
+                                audio.play();
+                            }
+                            function pauseAudio() {
+                                audio.pause();
+                            }
+                        </script>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Drugi primer -->
+            <div class="row mb-4">
+                <!-- Prva kolona: opis primera -->
+                <div class="col-md-6 example-card">
+                    <div class="example-content">
+                        <small>Primer 2</small>
+                        <h3>Kontrolisanje jačine zvuka u JavaScript-u</h3>
+                        <p>Ovaj primer prikazuje kako možete da kontrolišete jačinu zvuka vašeg audio elementa pomoću
+                            JavaScript-a.</p>
+                        <button type="button" class="btn btn-info" data-toggle="modal"
+                            data-target="#imageModal2">Prikaži kod</button>
+                    </div>
+                </div>
+
+                <!-- Druga kolona: zadatak ili primer -->
+                <div class="col-md-6 example-placeholder">
+                    <div class="placeholder-content">
+                        <p>Dodaj slider za kontrolu jačine zvuka audio fajla pomoću <code>volume</code> atributa u
+                            JavaScript-u.</p>
+                        <audio id="myAudio2">
+                            <source src="assets/audio/audio.mp3" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                        <br>
+                        <input type="range" min="0" max="1" step="0.1" onchange="setVolume(this.value)">
+                        <script>
+                            var audio2 = document.getElementById("myAudio2");
+                            function setVolume(volume) {
+                                audio2.volume = volume;
+                            }
+                        </script>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Treci primer -->
+            <div class="row mb-4">
+                <!-- Prva kolona: opis primera -->
+                <div class="col-md-6 example-card">
+                    <div class="example-content">
+                        <small>Primer 3</small>
+                        <h3>Provera završetka audio fajla</h3>
+                        <p>U ovom primeru, koristićemo JavaScript da proverimo kada se audio fajl završi i izvršimo
+                            određenu akciju, kao što je ispis poruke.</p>
+                        <button type="button" class="btn btn-info" data-toggle="modal"
+                            data-target="#imageModal3">Prikaži kod</button>
+                    </div>
+                </div>
+
+                <!-- Druga kolona: zadatak ili primer -->
+                <div class="col-md-6 example-placeholder">
+                    <div class="placeholder-content">
+                        <p>Koristi <code>ended</code> događaj u JavaScript-u da detektuje kada audio fajl završi i
+                            prikaže poruku.</p>
+                        <audio id="myAudio3">
+                            <source src="assets/audio/audio.mp3" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                        <br>
+                        <button onclick="playAudio3()" class="btn btn-success">Play</button>
+                        <p id="status"></p>
+                        <script>
+                            var audio3 = document.getElementById("myAudio3");
+                            function playAudio3() {
+                                audio3.play();
+                                audio3.onended = function () {
+                                    document.getElementById("status").innerText = "Audio fajl je završen!";
+                                };
+                            }
+                        </script>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modali za slike -->
+    <div class="modal fade" id="imageModal1" tabindex="-1" aria-labelledby="imageModal1Label" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content bg-dark text-light">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="imageModal1Label">Kod za Primer 1</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <img src="assets/img/AudioPrimer1.png" alt="Kod za Primer 1" class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="imageModal2" tabindex="-1" aria-labelledby="imageModal2Label" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content bg-dark text-light">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="imageModal2Label">Kod za Primer 2</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <img src="assets/img/AudioPrimer2.png" alt="Kod za Primer 2" class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="imageModal3" tabindex="-1" aria-labelledby="imageModal3Label" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content bg-dark text-light">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="imageModal3Label">Kod za Primer 3</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <img src="assets/img/AudioPrimer3.png" alt="Kod za Primer 3" class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="download-section">
+                        <img src="assets/img/transparent logo.png" alt="Logo" class="logo">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <ul class="footer-links">
+                        <li>
+                            <h3>Linkovi</h3>
+                        </li>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="audio.html">Audio</a></li>
+                        <li><a href="video.html">Audio</a></li>
+                        <li><a href="canvas.html">Canvas API</a></li>
+                        <li><a href="animacija.html">Animacije</a></li>
+                        <li><a href="youtube.html">YouTube Video</a></li>
+                        <li><a href="3d.html">3D Grafika</a></li>
+                        <li><a href="test.html">Test</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <div class="footer-download-section">
+                        <a href="assets/doc/Multimedia u JavaScript.pptx" download class="btn btn-primary">
+                            <img src="assets/img/powerpoint.png" alt="PDF Icon" class="button-icon"> Preuzmi Dokument
+                        </a>
+                        <a href="assets/doc/Multimedija u Javascriptu.pdf" download class="btn btn-primary">
+                            <img src="assets/img/pdf.png" alt="PowerPoint Icon" class="button-icon"> Preuzmi Dokument
+                        </a>
+                        <a href="assets/doc/Multimedija u Javascriptu.docx" download class="btn btn-primary">
+                            <img src="assets/img/word.png" alt="Word Icon" class="button-icon"> Preuzmi Dokument
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; Copyright 2024 Design and developed by <a href="https://stefanmilovanovic.webflow.io">Stefan</a>, All Rights Reserved.</p>
+        </div>
+    </footer>
+
+
+    <!-- Bootstrap JS -->
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="js/dugme.js"></script>
+</body>
+
+</html>

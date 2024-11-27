@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video u JavaScript</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/lekcije.css">
+    <link href="https://fonts.googleapis.com/css2?family=Righteous&family=Roboto:wght@400;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <a class="navbar-brand" href="index.html">
+            <img src="assets/img/transparent logo.png" alt="Logo" class="logo">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="audio.html">Audio</a></li>
+                <li class="nav-item"><a class="nav-link" href="video.html">Video</a></li>
+                <li class="nav-item"><a class="nav-link" href="canvas.html">Canvas</a></li>
+                <li class="nav-item"><a class="nav-link" href="animacija.html">Animacije</a></li>
+                <li class="nav-item"><a class="nav-link" href="youtube.html">YouTube Video</a></li>
+                <li class="nav-item"><a class="nav-link" href="3d.html">3D Grafika</a></li>
+                <li class="nav-item"><a class="nav-link" href="igrica.html">Igrica</a></li>
+                <li class="nav-item"><a class="nav-link" href="test.html">Test</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero/Naslov -->
+    <header class="header-section">
+        <canvas id="myCanvas"></canvas>
+        <div class="wave-shape"></div>
+        <div class="container">
+            <h1>Video in JavaScript</h1>
+            <p>Otkrij kako JavaScript omogućava neprimetnu integraciju video sadržaja u veb aplikacijama.</p>
+            <button class="animated-button" onclick="scrollToSection()">Započni</button>
+        </div>
+    </header>
+
+
+    <!-- Content Section -->
+    <section class="content-section" id="audio-usage">
+        <div class="container">
+            <h2>Zašto Koristiti Video u JavaScript-u?</h2>
+            <div class="content-box">
+                <h4>Prednosti i Upotreba Videa u JavaScript-u</h3>
+                    <br>
+                    <p>JavaScript pruža moćne alate za rad sa video sadržajem koristeći HTML5 video element i razne
+                        API-je za multimediju. Evo nekoliko glavnih razloga zašto se koristi:</p>
+                    <p>Kontrola reprodukcije: JavaScript ti omogućava da kontrolišeš reprodukciju video zapisa,
+                        uključujući funkcije kao što su play, pauza, zaustavljanje, promena jačine zvuka, premotavanje,
+                        i postavljanje brzine reprodukcije.</p>
+                    <p>Interaktivnost: Možeš dodavati interaktivne slojeve preko videa, kao što su titlovi, dugmad ili
+                        grafički prikazi koji reaguju na korisničke akcije ili događaje na stranici, što značajno
+                        poboljšava korisničko iskustvo.</p>
+                    <p>Integracija u aplikacije i strimovanje: U JavaScript-u je lako integrisati video u razne
+                        aplikacije ili koristiti dinamičko strimovanje. Video zapisi mogu biti deo igrica, edukativnih
+                        alata, tutorijala, ili uživo prenosa.</p>
+                    <p>API za video: JavaScript podržava API-je koji omogućavaju napredne funkcije, poput promene
+                        kvaliteta videa u realnom vremenu, praćenja napretka reprodukcije, ili sinhronizacije sa drugim
+                        medijima.</p>
+                    <p>Prednosti:</p>
+                    <p>Multiplatformska podrška: JavaScript radi u svim modernim pretraživačima, tako da je video
+                        integracija dostupna na različitim uređajima, uključujući računare, mobilne telefone i tablete.
+                    </p>
+                    <p>Prilagodljivost: JavaScript omogućava prilagođavanje videa, poput podešavanja kvaliteta ili
+                        dodavanja interaktivnih elemenata, kako bi se bolje prilagodio korisničkim potrebama.</p>
+                    <p>Laka upotreba: HTML5 video element se jednostavno koristi, a JavaScript daje dodatnu kontrolu i
+                        mogućnosti za manipulaciju video zapisima bez potrebe za dodatnim alatima.</p>
+                    <p>Mane:</p>
+                    <p>Veliki fajlovi: Video fajlovi često zahtevaju više resursa, što može usporiti učitavanje stranice
+                        ili izazvati probleme sa performansama na slabijim uređajima.</p>
+                    <p>Zavisnost od pretraživača i formata: Ne podržavaju svi pretraživači iste video formate, pa je
+                        potrebno koristiti formate poput MP4 ili WebM kako bi se osigurala maksimalna kompatibilnost.
+                    </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Examples Section -->
+    <section class="interactive-examples">
+        <div class="container">
+            <!-- Prvi primer -->
+            <div class="row mb-4">
+                <!-- Prva kolona: opis primera -->
+                <div class="col-md-6 example-card">
+                    <div class="example-content">
+                        <small>Primer 1</small>
+                        <h3>Reprodukcija videa unazad</h3>
+                        <p>Ovaj primer prikazuje kako možete da reprodukujete video unazad pomoću JavaScript-a,
+                            postepeno smanjujući trenutni vremenski kod.</p>
+                        <button type="button" class="btn btn-info" data-toggle="modal"
+                            data-target="#imageModal1">Prikaži kod</button>
+                    </div>
+                </div>
+
+                <!-- Druga kolona: zadatak ili primer -->
+                <div class="col-md-6 example-placeholder">
+                    <div class="placeholder-content">
+                        <p>Kliknite dugme da biste video pustili unazad.</p>
+                        <video id="reverseVideo" width="320" height="240" controls>
+                            <source src="assets/video/video.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <br>
+                        <button onclick="playReverse()" class="btn btn-warning">Rewind</button>
+                        <script>
+                            var reverseVideo = document.getElementById("reverseVideo");
+                            var rewindInterval;
+
+                            function playReverse() {
+                                if (!reverseVideo.paused) {
+                                    clearInterval(rewindInterval);
+                                    reverseVideo.pause();
+                                    return;
+                                }
+                                rewindInterval = setInterval(function () {
+                                    if (reverseVideo.currentTime <= 0) {
+                                        clearInterval(rewindInterval);
+                                    } else {
+                                        reverseVideo.currentTime -= 0.1;
+                                    }
+                                }, 100);
+                            }
+                        </script>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Drugi primer -->
+            <div class="row mb-4">
+                <!-- Prva kolona: opis primera -->
+                <div class="col-md-6 example-card">
+                    <div class="example-content">
+                        <small>Primer 2</small>
+                        <h3>Primena filtera na video u realnom vremenu</h3>
+                        <p>Ovde možete da primenjujete različite vizuelne filtere na video u realnom vremenu koristeći
+                            JavaScript i CSS.</p>
+                        <button type="button" class="btn btn-info" data-toggle="modal"
+                            data-target="#imageModal2">Prikaži kod</button>
+                    </div>
+                </div>
+
+                <!-- Druga kolona: zadatak ili primer -->
+                <div class="col-md-6 example-placeholder">
+                    <div class="placeholder-content">
+                        <p>Podesite filtere videa pomoću slidera.</p>
+                        <video id="filterVideo" width="320" height="240" controls>
+                            <source src="assets/video/video.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <br>
+                        <label>Brightness: </label>
+                        <input type="range" min="0" max="2" step="0.1" value="1" onchange="applyFilters()">
+                        <label>Contrast: </label>
+                        <input type="range" min="0" max="2" step="0.1" value="1" onchange="applyFilters()">
+                        <label>Saturate: </label>
+                        <input type="range" min="0" max="2" step="0.1" value="1" onchange="applyFilters()">
+                        <script>
+                            var filterVideo = document.getElementById("filterVideo");
+                            var inputs = document.querySelectorAll("input[type=range]");
+
+                            function applyFilters() {
+                                var brightness = inputs[0].value;
+                                var contrast = inputs[1].value;
+                                var saturate = inputs[2].value;
+                                filterVideo.style.filter = `brightness(${brightness}) contrast(${contrast}) saturate(${saturate})`;
+                            }
+                        </script>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Treci primer -->
+            <div class="row mb-4">
+                <!-- Prva kolona: opis primera -->
+                <div class="col-md-6 example-card">
+                    <div class="example-content">
+                        <small>Primer 3</small>
+                        <h3>Preskoči uvod u video</h3>
+                        <p>Ovaj primer prikazuje kako korisnici mogu preskočiti uvodni deo videa koristeći JavaScript
+                            funkcionalnost "preskoči uvod".</p>
+                        <button type="button" class="btn btn-info" data-toggle="modal"
+                            data-target="#imageModal3">Prikaži kod</button>
+                    </div>
+                </div>
+
+                <!-- Druga kolona: zadatak ili primer -->
+                <div class="col-md-6 example-placeholder">
+                    <div class="placeholder-content">
+                        <p>Kliknite dugme da preskočite uvod.</p>
+                        <video id="skipIntroVideo" width="320" height="240" controls>
+                            <source src="assets/video/video.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <br>
+                        <button onclick="skipIntro()" class="btn btn-info">Skip Intro</button>
+                        <script>
+                            var skipIntroVideo = document.getElementById("skipIntroVideo");
+
+                            function skipIntro() {
+                                skipIntroVideo.currentTime = 10; // Preskače prvih 10 sekundi
+                                skipIntroVideo.play();
+                            }
+                        </script>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modali za slike -->
+    <div class="modal fade" id="imageModal1" tabindex="-1" aria-labelledby="imageModal1Label" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content bg-dark text-light">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="imageModal1Label">Kod za Primer 1</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <img src="assets/img/VideoPrimer1.png" alt="Kod za Primer 1" class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="imageModal2" tabindex="-1" aria-labelledby="imageModal2Label" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content bg-dark text-light">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="imageModal2Label">Kod za Primer 2</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <img src="assets/img/VideoPrimer2.png" alt="Kod za Primer 2" class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="imageModal3" tabindex="-1" aria-labelledby="imageModal3Label" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content bg-dark text-light">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="imageModal3Label">Kod za Primer 3</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <img src="assets/img/VideoPrimer3.png" alt="Kod za Primer 3" class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="download-section">
+                        <img src="assets/img/transparent logo.png" alt="Logo" class="logo">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <ul class="footer-links">
+                        <li>
+                            <h3>Linkovi</h3>
+                        </li>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="audio.html">Audio</a></li>
+                        <li><a href="video.html">Audio</a></li>
+                        <li><a href="canvas.html">Canvas API</a></li>
+                        <li><a href="animacija.html">Animacije</a></li>
+                        <li><a href="youtube.html">YouTube Video</a></li>
+                        <li><a href="3d.html">3D Grafika</a></li>
+                        <li><a href="test.html">Test</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <div class="footer-download-section">
+                        <a href="assets/doc/Multimedia u JavaScript.pptx" download class="btn btn-primary">
+                            <img src="assets/img/powerpoint.png" alt="PDF Icon" class="button-icon"> Preuzmi Dokument
+                        </a>
+                        <a href="assets/doc/Multimedija u Javascriptu.pdf" download class="btn btn-primary">
+                            <img src="assets/img/pdf.png" alt="PowerPoint Icon" class="button-icon"> Preuzmi Dokument
+                        </a>
+                        <a href="assets/doc/Multimedija u Javascriptu.docx" download class="btn btn-primary">
+                            <img src="assets/img/word.png" alt="Word Icon" class="button-icon"> Preuzmi Dokument
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; Copyright 2024 Design and developed by <a href="https://stefanmilovanovic.webflow.io">Stefan</a>, All Rights Reserved.</p>
+        </div>
+    </footer>
+
+
+    <!-- Bootstrap JS -->
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="js/dugme.js"></script>
+</body>
+
+</html>

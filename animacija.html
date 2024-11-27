@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animacija u JavaScript</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/lekcije.css">
+    <link href="https://fonts.googleapis.com/css2?family=Righteous&family=Roboto:wght@400;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <a class="navbar-brand" href="index.html">
+            <img src="assets/img/transparent logo.png" alt="Logo" class="logo">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="audio.html">Audio</a></li>
+                <li class="nav-item"><a class="nav-link" href="video.html">Video</a></li>
+                <li class="nav-item"><a class="nav-link" href="canvas.html">Canvas</a></li>
+                <li class="nav-item"><a class="nav-link" href="animacija.html">Animacije</a></li>
+                <li class="nav-item"><a class="nav-link" href="youtube.html">YouTube Video</a></li>
+                <li class="nav-item"><a class="nav-link" href="3d.html">3D Grafika</a></li>
+                <li class="nav-item"><a class="nav-link" href="igrica.html">Igrica</a></li>
+                <li class="nav-item"><a class="nav-link" href="test.html">Test</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero/Naslov -->
+    <header class="header-section">
+        <canvas id="myCanvas"></canvas>
+        <div class="wave-shape"></div>
+        <div class="container">
+            <h1>Animacije in JavaScript</h1>
+            <p>Otkrij kako JavaScript oživljava veb stranice uz upotrebu moćnih animacija.</p>
+            <button class="animated-button" onclick="scrollToSection()">Započni</button>
+        </div>
+    </header>
+
+
+    <!-- Content Section -->
+    <section class="content-section" id="audio-usage">
+        <div class="container">
+            <h2>Zašto Koristiti Animacije JavaScript-u?</h2>
+            <div class="content-box">
+                <h4>Prednosti i Upotreba Animacija u JavaScript-u</h3>
+                    <br>
+                    <p>JavaScript nudi snažne alate za rad sa zvukom putem HTML5 audio elemenata i Web Audio API-ja. Evo
+                        nekoliko glavnih razloga zašto se koristi:</p>
+                    <p>Kontrola reprodukcije: JavaScript ti omogućava da kontrolišeš reprodukciju audio zapisa,
+                        uključujući funkcije kao što su play, pauza, zaustavljanje, promena jačine zvuka, i navigacija
+                        kroz audio fajl.</p>
+                    <p>Interaktivnost: Možeš dodavati audio efekte koji reaguju na korisničke akcije ili događaje na
+                        stranici, što povećava angažovanost korisnika.</p>
+                    <p>Integracija u igre i aplikacije: U JavaScript-u je lako dodavati zvukove u igrice ili aplikacije
+                        kako bi se poboljšalo korisničko iskustvo, npr. zvučni efekti ili muzička podloga.</p>
+                    <p>Web Audio API: Omogućava naprednu manipulaciju zvukom, uključujući stvaranje dinamičkih zvučnih
+                        efekata, filtriranje, i kontrolu višekanalnih audio signala. Takođe je moguće analizirati zvučne
+                        talase u realnom vremenu.</p>
+                    <p>Prednosti:</p>
+                    <p>Multiplatformska podrška: JavaScript radi u svim modernim pretraživačima, pa je integracija zvuka
+                        dostupna na svim uređajima.</p>
+                    <p>Laka upotreba: Rad sa audio elementima putem JavaScript-a je relativno jednostavan i ne zahteva
+                        dodatne biblioteke.</p>
+                    <p>Velika fleksibilnost: Moguće je implementirati razne funkcionalnosti, od osnovnog puštanja pesme
+                        do kompleksne audio obrade.</p>
+                    <p>Mane:</p>
+                    <p>Ograničena podrška za formate: Ne podržavaju svi pretraživači iste formate, pa je neophodno
+                        koristiti različite formate (kao što su MP3, Ogg) kako bi se osigurala kompatibilnost.</p>
+                    <p>Zavisnost od pretraživača: Performanse mogu zavisiti od pretraživača i hardvera na kojem se
+                        aplikacija izvršava.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Examples Section -->
+    <section class="interactive-examples">
+        <div class="container">
+            <h2>Interaktivni Primeri Animacija</h2>
+            <p>Otkrij moć JavaScript animacija kroz ove primere.</p>
+
+            <!-- Primer 1: Animacija Pokreta -->
+            <div class="row mb-4">
+                <!-- Opis primera -->
+                <div class="col-md-6 example-card">
+                    <div class="example-content">
+                        <small>Primer 1</small>
+                        <h3>Animacija Pokreta</h3>
+                        <p>Klikni na dugme ispod da pokreneš loptu koja se pomera po ekranu.</p>
+                        <button type="button" class="btn btn-info" data-toggle="modal"
+                            data-target="#imageModal1">Prikaži kod</button>
+                        <button class="btn btn-primary" onclick="startAnimation()">Pokreni</button>
+                    </div>
+                </div>
+                <!-- Prikaz primera -->
+                <div class="col-md-6 example-placeholder">
+                    <div class="placeholder-content">
+                        <div id="ball"
+                            style="width: 50px; height: 50px; background-color: red; border-radius: 50%; position: relative;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Primer 2: Fade-in i Fade-out -->
+            <div class="row mb-4">
+                <!-- Opis primera -->
+                <div class="col-md-6 example-card">
+                    <div class="example-content">
+                        <small>Primer 2</small>
+                        <h3>Fade-in i Fade-out</h3>
+                        <p>Klikni na dugme da postepeno prikažeš i sakriješ tekst koristeći JavaScript.</p>
+                        <button type="button" class="btn btn-info" data-toggle="modal"
+                            data-target="#imageModal2">Prikaži kod</button>
+                        <button class="btn btn-primary" onclick="fadeInText()">Fade In</button>
+                        <button class="btn btn-secondary" onclick="fadeOutText()">Fade Out</button>
+                    </div>
+                </div>
+                <!-- Prikaz primera -->
+                <div class="col-md-6 example-placeholder">
+                    <div class="placeholder-content">
+                        <p id="fade-text" style="opacity: 0; transition: opacity 2s;">Ovo je fade-in i fade-out
+                            animacija!</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Primer 3: Skaliranje elementa -->
+            <div class="row mb-4">
+                <!-- Opis primera -->
+                <div class="col-md-6 example-card">
+                    <div class="example-content">
+                        <small>Primer 3</small>
+                        <h3>Skaliranje Elementa</h3>
+                        <p>Klikni na dugme ispod da uvećaš kvadrat pomoću JavaScript animacije.</p>
+                        <button type="button" class="btn btn-info" data-toggle="modal"
+                            data-target="#imageModal3">Prikaži kod</button>
+                        <button class="btn btn-primary" onclick="scaleElement()">Uvećaj</button>
+                        <button class="btn btn-primary" onclick="scaleElementDown()">Smanji</button>
+                    </div>
+                </div>
+                <!-- Prikaz primera -->
+                <div class="col-md-6 example-placeholder">
+                    <div class="placeholder-content">
+                        <div id="square" style="width: 100px; height: 100px; background-color: blue; margin: 20px;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Primer 1: Animacija Pokreta
+        function startAnimation() {
+            const ball = document.getElementById("ball");
+            let position = 0;
+            const interval = setInterval(() => {
+                if (position >= 500) {
+                    clearInterval(interval);
+                } else {
+                    position++;
+                    ball.style.left = position + "px";
+                }
+            }, 5);
+        }
+
+        // Primer 2: Fade-in i Fade-out
+        function fadeInText() {
+            const text = document.getElementById("fade-text");
+            text.style.opacity = "1";
+        }
+
+        function fadeOutText() {
+            const text = document.getElementById("fade-text");
+            text.style.opacity = "0";
+        }
+
+        // Primer 3: Skaliranje Elementa
+        function scaleElement() {
+            const square = document.getElementById("square");
+            square.style.transition = "transform 2s";
+            square.style.transform = "scale(1.7)";
+        }
+
+        function scaleElementDown() {
+            const square = document.getElementById("square");
+            square.style.transition = "transform 2s";
+            square.style.transform = "scale(1)";
+        }
+
+    </script>
+
+
+       <!-- Modali za slike -->
+       <div class="modal fade" id="imageModal1" tabindex="-1" aria-labelledby="imageModal1Label" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content bg-dark text-light">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="imageModal1Label">Kod za Primer 1</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <img src="assets/img/AnimacijaPrimer1.png" alt="Kod za Primer 1" class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="imageModal2" tabindex="-1" aria-labelledby="imageModal2Label" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content bg-dark text-light">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="imageModal2Label">Kod za Primer 2</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <img src="assets/img/AnimacijaPrimer2.png" alt="Kod za Primer 2" class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="imageModal3" tabindex="-1" aria-labelledby="imageModal3Label" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content bg-dark text-light">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="imageModal3Label">Kod za Primer 3</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <img src="assets/img/AnimacijaPrimer3.png" alt="Kod za Primer 3" class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="download-section">
+                        <img src="assets/img/transparent logo.png" alt="Logo" class="logo">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <ul class="footer-links">
+                        <li>
+                            <h3>Linkovi</h3>
+                        </li>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="audio.html">Audio</a></li>
+                        <li><a href="video.html">Audio</a></li>
+                        <li><a href="canvas.html">Canvas API</a></li>
+                        <li><a href="animacija.html">Animacije</a></li>
+                        <li><a href="youtube.html">YouTube Video</a></li>
+                        <li><a href="3d.html">3D Grafika</a></li>
+                        <li><a href="test.html">Test</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <div class="footer-download-section">
+                        <a href="assets/doc/Multimedia u JavaScript.pptx" download class="btn btn-primary">
+                            <img src="assets/img/powerpoint.png" alt="PDF Icon" class="button-icon"> Preuzmi Dokument
+                        </a>
+                        <a href="assets/doc/Multimedija u Javascriptu.pdf" download class="btn btn-primary">
+                            <img src="assets/img/pdf.png" alt="PowerPoint Icon" class="button-icon"> Preuzmi Dokument
+                        </a>
+                        <a href="assets/doc/Multimedija u Javascriptu.docx" download class="btn btn-primary">
+                            <img src="assets/img/word.png" alt="Word Icon" class="button-icon"> Preuzmi Dokument
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; Copyright 2024 Design and developed by <a href="https://stefanmilovanovic.webflow.io">Stefan</a>, All Rights Reserved.</p>
+        </div>
+    </footer>
+
+
+    <!-- Bootstrap JS -->
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="js/dugme.js"></script>
+</body>
+
+</html>

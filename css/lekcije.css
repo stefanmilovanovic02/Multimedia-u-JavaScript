@@ -1,0 +1,450 @@
+body {
+  background-image: url("../assets/img/Background.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #fff;
+  margin: 0; /* Uklanja podrazumevani margin */
+}
+
+.container {
+  min-width: 1350px;
+  padding: 10px;
+}
+
+/* NAVBAR */
+.navbar {
+  background-color: transparent;
+  padding: 1rem;
+}
+
+.navbar .navbar-brand img.logo {
+  width: 174px;
+  height: 100px;
+}
+
+.navbar-nav .nav-link {
+  margin: 0 10px;
+  font-weight: normal;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #237be7 !important;
+  text-decoration: underline;
+}
+
+.navbar-nav .nav-link.active {
+  color: #237be7 !important;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.header-section {
+  height: 100vh; /* Postavlja visinu na 100% visine prozora */
+  position: relative; /* Omogućava pozicioniranje sadržaja */
+  overflow: hidden; /* Osigurava da sadržaj ne izlazi iz okvira */
+  padding: 0; /* Uklanja padding */
+  display: flex; /* Koristi flex za centriranje */
+  flex-direction: column; /* Vertikalno centriranje */
+  justify-content: center; /* Centriranje sadržaja vertikalno */
+  align-items: center; /* Centriranje sadržaja horizontalno */
+  text-align: center; /* Centriranje teksta */
+}
+
+.header-section canvas {
+  position: absolute; /* Pozicioniranje canvasa */
+  top: 0; /* Pozicioniranje od vrha */
+  left: 0; /* Pozicioniranje od leve strane */
+  width: 100%; /* Puna širina */
+  height: 100%; /* Puna visina */
+  font-family: "Roboto", sans-serif;
+}
+
+.header-section h1 {
+  font-family: "Righteous", cursive;
+  font-size: 5rem;
+  font-weight: bold;
+  margin-bottom: 16px;
+  color: #fff; /* Boja teksta */
+}
+
+.header-section p {
+  margin: 20px 0;
+  font-family: "Roboto", sans-serif;
+}
+
+.header-section .btn-primary {
+  margin-top: 20px; /* Razmak iznad dugmeta */
+  background-color: #237be7; /* Boja pozadine dugmeta */
+  border: none; /* Bez okvira */
+  padding: 10px 30px; /* Padding unutar dugmeta */
+  font-size: 1.2rem; /* Veličina fonta dugmeta */
+  transition: background-color 0.3s; /* Glatka promena boje pozadine */
+}
+
+.header-section .btn-primary:hover {
+  background-color: #0056b3; /* Tamnija nijansa plave za hover */
+  color: #fff; /* Boja teksta */
+}
+
+.wave-shape {
+  position: absolute; /* Pozicioniranje talasa */
+  top: 0;
+  left: 0;
+  width: 100%; /* Puna širina */
+  height: 100%; /* Puna visina */
+  background: url("wave-shape.png") no-repeat center center; /* Pozadina talasa */
+  background-size: cover; /* Pokriva celu površinu */
+  z-index: 1; /* Ispod teksta */
+}
+
+.content-section {
+  padding: 90px 0;
+  text-align: center;
+}
+
+.content-section h2 {
+  font-family: "Righteous", cursive;
+  margin-bottom: 60px;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.content-box {
+  background-color: #111;
+  border: 2px solid #237be7;
+  border-radius: 20px;
+  padding: 30px;
+  border-radius: 10px;
+}
+
+.content-box p {
+  text-align: left;
+  font-size: 1rem;
+}
+
+/* INTERACTIVE SECTION */
+.interactive-examples {
+  color: #fff;
+  padding: 90px 0;
+  text-align: center;
+}
+
+.interactive-examples h2 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  font-family: "Righteous", cursive;
+}
+
+.interactive-examples p {
+  font-size: 1rem;
+  color: #b0b0b0;
+  margin-bottom: 50px;
+}
+
+.example-card,
+.example-placeholder {
+  padding: 20px;
+  margin-bottom: 30px;
+}
+
+.example-content {
+  padding: 20px;
+  border: 1px solid #237be7; /* Plava bordura */
+  border-radius: 20px;
+  background-color: #000;
+}
+
+.example-content small {
+  color: #b0b0b0;
+}
+
+.example-content h3 {
+  font-size: 1.5rem;
+  margin: 10px 0;
+  margin-top: 8px;
+  margin-bottom: 16px;
+}
+
+.example-content p {
+  font-size: 0.9rem;
+  color: #b0b0b0;
+  margin-bottom: 32px;
+}
+
+.example-content .btn {
+  background-color: #237be7;
+  border-radius: 10px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  margin-top: 15px;
+}
+
+.placeholder-content {
+  min-height: 200px;
+  background-color: #000000;
+  padding: 20px;
+  border: 1px solid #237be7;
+  border-radius: 20px;
+}
+
+.placeholder-contentt {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  background-color: #000000;
+  padding: 20px;
+  border: 1px solid #237be7;
+  border-radius: 20px;
+}
+
+/* Footer Section */
+.footer {
+  background-color: #111;
+  padding: 40px 0;
+  color: white;
+}
+
+.footer-logo {
+  width: 174px;
+  height: 100px;
+}
+.footer-links {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer-links li {
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+  margin-left: 120px;
+}
+
+.footer-links li a {
+  color: white;
+  text-decoration: none;
+}
+
+.footer-links li a:hover {
+  text-decoration: underline;
+}
+
+.download-section .btn:hover {
+  background-color: #105ab2;
+}
+
+.footer-download-section .btn {
+  background-color: #237be7;
+  border-radius: 10px;
+  font-size: 1.2rem;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 100px;
+  margin-bottom: 50px;
+}
+
+.footer-download-section .button-icon {
+  width: 24px; /* Veličina ikonice */
+  height: auto;
+}
+
+.copyright {
+  text-align: center;
+  margin-top: 20px;
+  font-family: "Roboto", sans-serif;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.download-section {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+  background-color: #111;
+  border: 2px solid #237be7;
+  border-radius: 20px;
+  padding: 40px;
+}
+
+/* Button Animations */
+.animated-button {
+  position: relative;
+  display: inline-block;
+  padding: 12px 30px;
+  font-size: 18px;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: center;
+  color: #fff;
+  background-color: #237be7;
+  border: none;
+  border-radius: 5px;
+  transition: all 0.3s ease-in-out;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.animated-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 300%;
+  height: 300%;
+  background-color: rgba(255, 255, 255, 0.1);
+  transform: translate(-50%, -50%) scale(0);
+  transition: transform 0.5s ease;
+  border-radius: 50%;
+  z-index: -1;
+}
+
+.animated-button:hover::before {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.animated-button:hover {
+  background-color: #1b61c0; /* Darker blue on hover */
+  color: #ffffff;
+  box-shadow: 0 8px 15px rgba(35, 123, 231, 0.6);
+}
+
+.animated-button:active {
+  transform: translateY(2px); /* Button press effect */
+}
+.dugme {
+  margin-top: 20px;
+  background-color: #237be7;
+  border-color: #237be7;
+  color: white;
+  padding: 12px 30px;
+  font-size: 1.25rem;
+  /* border-radius: 30px; */
+  transition: transform 0.3s ease, background-color 0.3s ease; /* Smooth transition */
+  box-shadow: 0 5px 15px rgba(35, 123, 231, 0.4); /* Add shadow for depth */
+}
+
+.hero .dugme:hover {
+  transform: scale(1.1); /* Button grows slightly */
+  background-color: #1a65b4; /* Darken the background color on hover */
+}
+
+.hero .dugme:active {
+  transform: scale(0.95); /* Slight shrink when clicked */
+}
+
+/* Adding a subtle animation */
+.hero .dugme {
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.modal-body {
+  min-width: 900px;
+}
+
+.modal-content {
+  min-width: 900px;
+}
+
+/* TEST STYLE */
+
+.options {
+  margin-top: 1rem;
+  .option-item {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+
+    input[type="radio"],
+    label {
+      cursor: pointer;
+    }
+  }
+}
+
+.card-title {
+  min-height: 80px;
+}
+
+.card-body {
+  min-height: 230px;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  background-color: #111;
+}
+
+.question {
+  margin-top: 200px;
+}
+
+.btns-wrapper {
+  background-color: #111;
+  border-color: #111;
+}
+
+.card-title {
+  background-color: #111;
+}
+
+#jumbotron {
+  background-color: 111;
+}
+
+.modal-header,
+.modal-body,
+.modal-footer {
+  background-color: #111;
+}
+
+.modal-content {
+  margin-left: -200px;
+}
+/* modal za ispis resenja testa */
+.custom-modal-content {
+  background-color: #111; /* Tamna pozadina */
+  border: 2px solid #237be7; /* Plavi okvir */
+  border-radius: 10px; /* Zaobljeni uglovi */
+  padding: 20px;
+  color: #fff; /* Bela boja teksta */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); /* Sjena za dubinu */
+}
+
+.modal-dialog-centered {
+  display: flex;
+  align-items: center; /* Vertikalno centriranje */
+  justify-content: center; /* Horizontalno centriranje */
+}
+
+
+#square{
+  margin-top: 30px !important; 
+  margin-left: 250px !important;
+}
+
+.modal-content{
+  margin-left: 25px !important;
+}
+
+.question-image{
+  background-color: #111;
+ 
+  margin-top: -0px !important;
+  margin-bottom: -0px !important;
+}
